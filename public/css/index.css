@@ -1,0 +1,79 @@
+body {
+    background-color: #00103C;
+    color: white;
+}
+
+.container {
+    width: 100%;
+    height: calc(100vh - 76px); /* 헤더 뺀 높이 */
+    display: flex;
+    justify-content: center; /* 화면 정중앙 정렬 */
+    align-items: center;
+}
+
+/* 전체 큰 틀 (상단 1.5 : 하단 1 비율) */
+.main-content {
+    width: 80%;       
+    max-width: 1200px;
+    height: 90%;
+    display: grid;
+    grid-template-rows: 1.5fr 1fr; /* 위 1.5 : 아래 1 */
+    gap: 20px;
+}
+
+/* --- 상단 구역 (좌우 1:1) --- */
+.hero-section {
+    display: grid;
+    grid-template-columns: 1fr 0.6fr; /* 좌우 반반 */
+    gap: 40px;
+    width: 100%;
+    height: 100%;
+}
+
+.text-area {
+    background-color: rgba(255, 255, 255, 0.2); 
+    backdrop-filter: blur(10px); 
+    border-radius: 15px;
+}
+.character-area {
+    background-color: rgba(255, 255, 255, 0.2); 
+    backdrop-filter: blur(10px); 
+    border-radius: 15px;
+    width: 100%;
+    height: 100%;
+    position: relative; /* 나중에 내부 요소 겹칠 때 필요 */
+    overflow: hidden;
+}
+
+.character {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 비율 유지하면서 영역 채우기 (자른다) */
+    /* object-fit: contain; 사용 시 비율 유지하면서 여백 생김 */
+}
+
+/* --- 하단 구역 (메뉴 카드들) --- */
+.menu-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    height: 100%;
+}
+
+.menu-card {
+    flex: 1; /* 카드끼리 너비 균등 분배 */
+    height: 80%;
+    background-color: rgba(255, 255, 255, 0.2); 
+    backdrop-filter: blur(10px); 
+    border-radius: 15px;
+    transition: transform 0.3s;
+}
+
+.nav-arrow {
+    width: 50px; /* 화살표 들어갈 자리 확보 */
+    height: 50px;
+    /* 화살표 아이콘이나 이미지를 나중에 여기에 넣으시면 됩니다 */
+}
+
