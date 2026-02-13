@@ -76,3 +76,18 @@ nav{
     background-color: white;
     color: #1d1d1d; /* 배경이 흰색이 되면 글자는 어둡게 */
 }
+
+/* 푸터 공통 스타일 */
+#footer p{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: small;
+}
