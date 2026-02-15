@@ -5,89 +5,99 @@
   font-style: normal;
 }
 
-/* 바디 전체 세팅 */    
-body{
-    font-family: 'Bungee', sans-serif;
-    margin: 0;
+/* 바디 전체 세팅 */
+body {
+  font-family: "Bungee", sans-serif;
+  margin: 0;
 }
 
 /* 모든 링크 밑줄/색깔 없애기*/
 a {
-    text-decoration-line: none;
-    color: inherit;
-    width: fit-content;
-    height: fit-content;
+  text-decoration-line: none;
+  color: inherit;
+  width: fit-content;
+  height: fit-content;
 }
 
 /* 헤더 세팅 */
 header {
-    background-color: rgba(0, 0, 0, 0.8);
-    backdrop-filter: blur(10px);
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 8px 45px;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 45px;
 }
 
 /* 로고 컨테이너: 내부 로고들을 가로로 나란히 배치 */
 .logo-container {
-    display: flex;
-    align-items: center;
-    gap: 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
 /* 로고 이미지 세팅 */
 .logo-img {
-    width: 60px;
-    height: auto;
+  width: 60px;
+  height: auto;
 }
 
 .logo-next-img {
-    width: 90px;
-    height: auto;
+  width: 90px;
+  height: auto;
 }
 
 /* 내비게이션바 세팅 */
-nav{
-    font-size: 40px;
-    display: flex;
-    gap: 10px;
-    margin-right: 20px;
+nav {
+  font-size: 40px;
+  display: flex;
+  gap: 10px;
+  margin-right: 20px;
 }
 
 /* 내비게이션바 버튼 크기만 더 작게 */
-.nav-button{
-    font-size: 28px;
-    margin-top: 8px;
-
+.nav-button {
+  font-size: 28px;
+  margin-top: 8px;
 }
 
 /* 로그인/로그아웃 버튼 전용 스타일 */
-#login-button{
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    padding: 5px 15px;
-    border-radius: 20px;
-    font-size: 18px; /* 다른 메뉴보다 조금 작게 설정 */
-    transition: all 0.3s ease;
+#login-button,
+.upload-button {
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 18px; /* 다른 메뉴보다 조금 작게 설정 */
+  transition: all 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
-#login-button:hover {
-    background-color: white;
-    color: #1d1d1d; /* 배경이 흰색이 되면 글자는 어둡게 */
+#login-button:hover,
+.upload-button:hover {
+  background-color: white;
+  color: #1d1d1d; /* 배경이 흰색이 되면 글자는 어둡게 */
 }
 
 /* 푸터 공통 스타일 */
-#footer p{
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
-    background-color: rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(10px);
-    z-index: 1000;
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: small;
+#footer p {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: small;
+}
+.upload-button {
+  width: 120px;
+  height: 35px;
+  color: white;
+  font-family: "Bungee", sans-serif;
+  text-align: center;
+  cursor: pointer;
 }

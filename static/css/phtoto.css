@@ -52,9 +52,9 @@
   align-items: center;
 }
 .accordion-content.active {
-  max-height: 600px;
+  max-height: 5000px;
   padding: 20px;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 .accordion-content p {
   margin: 0;
