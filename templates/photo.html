@@ -3,9 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../static/css/common.css" />
-    <link rel="stylesheet" href="../static/css/index.css" />
-    <link rel="stylesheet" href="../static/css/phtoto.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/common.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/phtoto.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/modal.css') }}" />
     <meta name="author" content="FurGall" />
     <meta name="description" content="Fursuit & Fur pictue Gallary" />
     <!--구글 폰트 가져오기-->
@@ -20,8 +21,12 @@
   <body>
     <header>
       <div class="logo-container">
-        <div class="logo"><img src="../static/image/koyu.webp" alt="logo" class="logo-img" /></div>
-        <div class="logo"><img src="../static/image/test.png" alt="logo" class="logo-next-img" /></div>
+        <div class="logo">
+          <img src="{{ url_for('static', filename='image/koyu.webp') }}" alt="logo" class="logo-img" />
+        </div>
+        <div class="logo">
+          <img src="{{ url_for('static', filename='image/test.png') }}" alt="logo" class="logo-next-img" />
+        </div>
       </div>
       <nav class="header-nav">
         <a href="/photo" title="PHOTO" class="nav-button">PHOTO</a>
@@ -31,41 +36,66 @@
         <a href="/art" title="ART" class="nav-button">ART</a>
         <span>|</span>
         <a href="/about" title="ABOUT" class="nav-button">ABOUT</a>
+        <button class="nav-button upload-button" onclick="openUploadModal()">UPLOAD</button>
         <a href="/login" title="LOGIN" class="nav-button" id="login-button">Login</a>
       </nav>
     </header>
     <main>
       <div class="img-holder">
-        <img src="../static/image/IMG_0049.PNG" class="img-header" />
+        <img src="{{ url_for('static', filename='image/IMG_0049.PNG') }}" class="img-header" />
       </div>
       <!--2026-->
       <div class="accordion-item">
-        <button class="accordion-header">
-          2026
-          <span class="icon">▼</span>
-        </button>
+        <button class="accordion-header">2026<span class="icon">▼</span></button>
         <div class="accordion-content"></div>
       </div>
       <!--2025-->
       <div class="accordion-item">
-        <button class="accordion-header">
-          2025
-          <span class="icon">▼</span>
-        </button>
+        <button class="accordion-header">2025<span class="icon">▼</span></button>
         <div class="accordion-content"></div>
       </div>
       <!--2024-->
       <div class="accordion-item">
-        <button class="accordion-header">
-          2024
-          <span class="icon">▼</span>
-        </button>
+        <button class="accordion-header">2024<span class="icon">▼</span></button>
         <div class="accordion-content"></div>
+      </div>
+      <!--2023-->
+      <div class="accordion-item">
+        <button class="accordion-header">2023<span class="icon">▼</span></button>
+        <div class="accordion-content"></div>
+      </div>
+      <!--사진 업로드 모달-->
+      <div id="uploadModal" class="modal">
+        <div class="modal-overlay" onclick="closeUploadModal()"></div>
+
+        <div class="modal-content upload-box">
+          <span class="close-btn" onclick="closeUploadModal()">&times;</span>
+          <h3>Upload new image</h3>
+
+          <form action="/upload" method="POST" enctype="multipart/form-data">
+            <div class="input-group">
+              <label>Select Year:</label>
+              <select name="year" class="year-select">
+                <option value="2026">2026</option>
+                <option value="2025">2025</option>
+                <option value="2024">2024</option>
+                <option value="2023">2023</option>
+              </select>
+            </div>
+
+            <div class="input-group year-group">
+              <input type="file" name="file" accept="image/*" multiple required />
+            </div>
+
+            <button type="submit" class="submit-btn">Upload</button>
+          </form>
+        </div>
       </div>
     </main>
     <footer id="footer">
       <p id="copyright">ⓒ 2026 Mir All rights reserved.</p>
     </footer>
   </body>
-  <script src="../static/js/photo.js"></script>
+  <script src="{{ url_for('static', filename='js/photo.js') }}?v=4"></script>
+  <script src="{{ url_for('static', filename='js/modal.js') }}"></script>
 </html>

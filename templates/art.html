@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="../static/css/common.css" />
     <link rel="stylesheet" href="../static/css/index.css" />
     <link rel="stylesheet" href="../static/css/phtoto.css" />
+    <link rel="stylesheet" href="../static/css/art.css" />
     <meta name="author" content="FurGall" />
     <meta name="description" content="Fursuit & Fur pictue Gallary" />
     <!--구글 폰트 가져오기-->
@@ -34,21 +35,37 @@
         <a href="/login" title="LOGIN" class="nav-button" id="login-button">Login</a>
       </nav>
     </header>
-    <div class="upload-container">
-      <h2>새 이미지 업로드</h2>
+    <button class="nav-button" onclick="openUploadModal()">사진 업로드</button>
 
-      <form action="/upload" method="POST" enctype="multipart/form-data">
-        <div class="file-input-group">
-          <input type="file" name="file" id="imageInput" accept="image/*" required />
-          <label for="imageInput">사진을 선택하세요 (jpg, png, webp...)</label>
-        </div>
+    <div id="uploadModal" class="modal">
+      <div class="modal-overlay" onclick="closeUploadModal()"></div>
 
-        <button type="submit" class="submit-btn">서버로 전송하기</button>
-      </form>
+      <div class="modal-content upload-box">
+        <span class="close-btn" onclick="closeUploadModal()">&times;</span>
+        <h3>새 이미지 업로드</h3>
+
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+          <div class="input-group">
+            <label>연도 선택:</label>
+            <select name="year" class="year-select">
+              <option value="2026">2026년</option>
+              <option value="2025">2025년</option>
+              <option value="2024">2024년</option>
+            </select>
+          </div>
+
+          <div class="input-group">
+            <input type="file" name="file" accept="image/*" required />
+          </div>
+
+          <button type="submit" class="submit-btn">업로드</button>
+        </form>
+      </div>
     </div>
     <footer id="footer">
       <p id="copyright">ⓒ 2026 Mir All rights reserved.</p>
     </footer>
   </body>
   <script src="../static/js/photo.js"></script>
+  <script src="../static/js/art.js"></script>
 </html>
