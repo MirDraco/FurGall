@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/css/common.css" />
+    <link rel="stylesheet" href="../static/css/index.css" />
+    <link rel="stylesheet" href="../static/css/phtoto.css" />
+    <meta name="author" content="FurGall" />
+    <meta name="description" content="Fursuit & Fur pictue Gallary" />
+    <!--구글 폰트 가져오기-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet" />
+    <!--타이틀-->
+    <title>Photo</title>
+    <link rel="icon" href="../static/image/koyu.webp" type="image/x-icon" />
+  </head>
+  <body>
+    <header>
+      <div class="logo-container">
+        <div class="logo"><img src="../static/image/koyu.webp" alt="logo" class="logo-img" /></div>
+        <div class="logo"><img src="../static/image/test.png" alt="logo" class="logo-next-img" /></div>
+      </div>
+      <nav class="header-nav">
+        <a href="/photo" title="PHOTO" class="nav-button">PHOTO</a>
+        <span>|</span>
+        <a href="/3d" title="3D" class="nav-button">3D</a>
+        <span>|</span>
+        <a href="/art" title="ART" class="nav-button">ART</a>
+        <span>|</span>
+        <a href="/about" title="ABOUT" class="nav-button">ABOUT</a>
+        <a href="/login" title="LOGIN" class="nav-button" id="login-button">Login</a>
+      </nav>
+    </header>
+    <main>
+      <div class="img-holder">
+        <img src="../static/image/IMG_0049.PNG" class="img-header" />
+      </div>
+      <!--2026-->
+      <div class="accordion-item">
+        <button class="accordion-header">
+          2026
+          <span class="icon">▼</span>
+        </button>
+        <div class="accordion-content"></div>
+      </div>
+      <!--2025-->
+      <div class="accordion-item">
+        <button class="accordion-header">
+          2025
+          <span class="icon">▼</span>
+        </button>
+        <div class="accordion-content"></div>
+      </div>
+      <!--2024-->
+      <div class="accordion-item">
+        <button class="accordion-header">
+          2024
+          <span class="icon">▼</span>
+        </button>
+        <div class="accordion-content"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <p id="copyright">ⓒ 2026 Mir All rights reserved.</p>
+    </footer>
+  </body>
+  <script src="../static/js/photo.js"></script>
+</html>
