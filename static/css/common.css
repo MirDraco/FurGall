@@ -62,9 +62,10 @@ nav {
   margin-top: 8px;
 }
 
-/* 로그인/로그아웃 버튼 전용 스타일 */
+/* 로그인/로그아웃/회원가입 버튼 전용 스타일 */
 #login-button,
-.upload-button {
+.upload-button,
+.auth-button {
   border: 1px solid rgba(255, 255, 255, 0.5);
   padding: 5px 15px;
   border-radius: 20px;
@@ -74,7 +75,8 @@ nav {
 }
 
 #login-button:hover,
-.upload-button:hover {
+.upload-button:hover,
+.auth-button:hover {
   background-color: white;
   color: #1d1d1d; /* 배경이 흰색이 되면 글자는 어둡게 */
 }

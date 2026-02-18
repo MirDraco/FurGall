@@ -128,3 +128,8 @@ h3 {
   color: #1d1d1d; /* 배경이 흰색이 되면 글자는 어둡게 */
   cursor: pointer;
 }
+
+h4 {
+  margin: 5px 0px;
+  font-size: medium;
+}
