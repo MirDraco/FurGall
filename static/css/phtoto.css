@@ -48,7 +48,7 @@
   background-color: #002166;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  gap: 15px;
   align-items: center;
 }
 .accordion-content.active {
@@ -62,7 +62,37 @@
   line-height: 1.5;
 }
 .photo-img {
-  width: 100%;
-  margin-bottom: 10px;
+  width: 85%;
+  margin: 0 auto;
   display: block;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.photo-img:hover {
+  transform: scale(1.05);
+}
+
+.photo-item {
+  position: relative;
+  display: inline-block;
+}
+
+.delete-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(255, 0, 0, 0.7);
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 14px;
+  z-index: 10;
+  margin-right: 10px;
+}
+
+.delete-btn:hover {
+  background: rgba(255, 0, 0, 0.9);
 }

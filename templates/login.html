@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/common.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/auth.css') }}" />
+    <meta name="author" content="FurGall" />
+    <meta name="description" content="FurGall Login" />
+    <!--구글 폰트 가져오기-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+    <!--타이틀-->
+    <title>Login - FurGall</title>
+    <link rel="icon" href="{{ url_for('static', filename='image/koyu.webp') }}" type="image/x-icon" />
+  </head>
+  <body>
+    <header>
+      <div class="logo-container">
+        <div class="logo">
+          <img src="{{ url_for('static', filename='image/koyu.webp') }}" alt="logo" class="logo-img" />
+        </div>
+        <div class="logo">
+          <img src="{{ url_for('static', filename='image/test.png') }}" alt="logo" class="logo-next-img" />
+        </div>
+      </div>
+      <nav class="header-nav">
+        <a href="/photo" title="PHOTO" class="nav-button">PHOTO</a>
+        <span>|</span>
+        <a href="/3d" title="3D" class="nav-button">3D</a>
+        <span>|</span>
+        <a href="/art" title="ART" class="nav-button">ART</a>
+        <span>|</span>
+        <a href="/about" title="ABOUT" class="nav-button">ABOUT</a>
+        <a href="/register" title="REGISTER" class="nav-button auth-button">Register</a>
+        <a href="/login" title="LOGIN" class="nav-button" id="login-button">Login</a>
+      </nav>
+    </header>
+
+    <div class="auth-container">
+      <h1>Login</h1>
+
+      <div class="error-message" id="errorMessage">
+        <!-- 에러 메시지가 여기 표시됩니다 -->
+      </div>
+
+      <form method="POST" action="/login">
+        <div class="form-group">
+          <label for="user_id">Username</label>
+          <input
+            type="text"
+            id="user_id"
+            name="user_id"
+            required
+            autocomplete="username"
+            placeholder="Enter your username" />
+        </div>
+
+        <div class="form-group">
+          <label for="user_pw">Password</label>
+          <input
+            type="password"
+            id="user_pw"
+            name="user_pw"
+            required
+            autocomplete="current-password"
+            placeholder="Enter your password" />
+        </div>
+
+        <button type="submit" class="btn-submit">Login</button>
+      </form>
+
+      <div class="auth-links">Don't have an account? <a href="/register">Sign up</a></div>
+    </div>
+  </body>
+</html>

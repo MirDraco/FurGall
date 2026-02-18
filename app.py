@@ -6,7 +6,7 @@ from datetime import datetime
 app = Flask(__name__)
 
 app.config['UPLOAD_FOLDER'] = 'static/uploads'
-app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
+app.config['MAX_CONTENT_LENGTH'] = 100 * 1024 * 1024
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif', 'webp'}
 
 def allowed_file(filename):
@@ -61,38 +61,43 @@ def upload_file():
 @app.route('/api/photos/<year>')
 def get_photos(year):
     """연도별 사진 목록 반환 (JSON)"""
-    print(f"🟢 [서버] /api/photos/{year} 요청 받음")
     folder_path = os.path.join(app.config['UPLOAD_FOLDER'], year)
-    print(f"🟢 [서버] 폴더 경로: {folder_path}")
     
     # 폴더가 없으면 빈 배열 반환
     if not os.path.exists(folder_path):
-        print(f"🟢 [서버] 폴더 없음! 빈 배열 반환")
         return jsonify([])
     
     files = []
     all_files = os.listdir(folder_path)
-    print(f"🟢 [서버] 폴더 내 모든 파일: {all_files}")
     
     for filename in sorted(all_files, reverse=True):
-        print(f"🟢 [서버] 파일 확인: {filename}, allowed_file: {allowed_file(filename)}")
         if allowed_file(filename):
             files.append({
                 'filename': filename,
                 'url': f'/static/uploads/{year}/{filename}'
             })
     
-    print(f"🟢 [서버] 반환할 파일 목록: {files}")
     return jsonify(files)
+# 삭제 기능
+@app.route('/api/photos/<year>/<filename>', methods=['DELETE'])
+def delete_photo(year, filename):
+    """사진 삭제 API"""
+    try:
+        safe_filename = secure_filename(filename)
+        file_path = os.path.join(app.config['UPLOAD_FOLDER'], year, safe_filename)
 
+        if not os.path.exists(file_path):
+            return jsonify({'error': '파일을 찾을 수 없습니다'}), 404
+        
+        os.remove(file_path)
+        print(f"파일 삭제 완료: {file_path}")
 
+        return jsonify({'success': True, 'message': '삭제되었습니다'}), 200
 
-
-
-
-
-
-
+    except Exception as e:
+        print(f"삭제 오류: {e}")
+        return jsonify({'error': '삭제 실패'}), 500
+    
 
 
 # 실행
