@@ -36,9 +36,15 @@
         <a href="/art" title="ART" class="nav-button">ART</a>
         <span>|</span>
         <a href="/about" title="ABOUT" class="nav-button">ABOUT</a>
+        {% if session.get('is_admin') == 1 %}
         <button class="nav-button upload-button" onclick="openUploadModal()">UPLOAD</button>
+        {% endif %} {% if session.get('user_id') %}
+        <span class="user-name">Hi, {{ session['user_id'] }}!</span>
+        <a href="/logout" class="nav-button">Logout</a>
+        {% else %}
         <a href="/register" title="REGISTER" class="nav-button auth-button">Register</a>
         <a href="/login" title="LOGIN" class="nav-button" id="login-button">Login</a>
+        {% endif %}
       </nav>
     </header>
     <main>
