@@ -81,6 +81,14 @@ nav {
   color: #1d1d1d; /* 배경이 흰색이 되면 글자는 어둡게 */
 }
 
+/* 사용자 환영 메시지 스타일 */
+.user-name {
+  font-size: 18px;
+  margin-top: 8px;
+  padding: 5px 10px;
+  color: white;
+}
+
 /* 푸터 공통 스타일 */
 #footer p {
   position: fixed;

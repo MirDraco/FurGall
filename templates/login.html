@@ -35,12 +35,23 @@
         <a href="/art" title="ART" class="nav-button">ART</a>
         <span>|</span>
         <a href="/about" title="ABOUT" class="nav-button">ABOUT</a>
+        {% if session.get('user_id') %}
+        <span class="user-name">Hi, {{ session['user_id'] }}!</span>
+        <a href="/logout" class="nav-button">Logout</a>
+        {% else %}
         <a href="/register" title="REGISTER" class="nav-button auth-button">Register</a>
         <a href="/login" title="LOGIN" class="nav-button" id="login-button">Login</a>
+        {% endif %}
       </nav>
     </header>
 
     <div class="auth-container">
+      {% with messages = get_flashed_messages() %} {% if messages %}
+      <script>
+        // 배달된 메시지가 있으면 그 내용을 알림창으로 띄워라!
+        alert("{{ messages[0] }}");
+      </script>
+      {% endif %} {% endwith %}
       <h1>Login</h1>
 
       <div class="error-message" id="errorMessage">
