@@ -24,13 +24,15 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%); /* 정확히 화면 정중앙 */
-  background-color: #2c2c2c; /* 다크 모드 테마 */
+  background-color: #212d40;
   padding: 15px;
   border-radius: 15px;
   width: 90%;
   max-width: 400px;
   color: white;
   text-align: center;
+  border: 2px solid #364156;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
 }
 /* 1. 나타나는 애니메이션 */
 @keyframes modalShow {
@@ -114,19 +116,19 @@ h3 {
 }
 .submit-btn {
   margin-top: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  border: 2px solid #7d4e57;
   padding: 5px 15px;
   border-radius: 20px;
-  font-size: 18px; /* 다른 메뉴보다 조금 작게 설정 */
+  font-size: 18px;
   transition: all 0.3s ease;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: #364156;
   font-family: "Bungee", sans-serif;
   color: white;
+  cursor: pointer;
 }
 .submit-btn:hover {
-  background-color: white;
-  color: #1d1d1d; /* 배경이 흰색이 되면 글자는 어둡게 */
-  cursor: pointer;
+  background-color: #d66853;
+  border-color: #d66853;
 }
 
 h4 {

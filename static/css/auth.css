@@ -2,7 +2,7 @@
 
 /* 다크모드 배경 */
 body {
-  background-color: #00103c;
+  background-color: #11151c;
   color: white;
   min-height: 100vh;
 }
@@ -11,11 +11,10 @@ body {
   max-width: 450px;
   margin: 120px auto;
   padding: 50px 45px;
-  background: rgba(0, 0, 0, 0.4);
+  background: #212d40;
   border-radius: 25px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(15px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid #364156;
 }
 
 .auth-container h1 {
@@ -34,7 +33,7 @@ body {
 .form-group label {
   display: block;
   margin-bottom: 10px;
-  color: #e0e0e0;
+  color: white;
   font-weight: 600;
   font-size: 0.95em;
   letter-spacing: 0.5px;
@@ -43,21 +42,21 @@ body {
 .form-group input {
   width: 100%;
   padding: 14px 18px;
-  border: 2px solid rgba(255, 255, 255, 0.2);
+  border: 2px solid #364156;
   border-radius: 12px;
   font-size: 1em;
   transition: all 0.3s ease;
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
-  background: rgba(255, 255, 255, 0.1);
+  background: #364156;
   color: white;
 }
 
 .form-group input:focus {
   outline: none;
-  border-color: #6c5ce7;
-  background: rgba(255, 255, 255, 0.15);
-  box-shadow: 0 0 0 4px rgba(108, 92, 231, 0.3);
+  border-color: #d66853;
+  background: #364156;
+  box-shadow: 0 0 0 4px rgba(214, 104, 83, 0.3);
 }
 
 .form-group input::placeholder {
@@ -68,14 +67,14 @@ body {
 .form-group input:-webkit-autofill:hover,
 .form-group input:-webkit-autofill:focus {
   -webkit-text-fill-color: white;
-  -webkit-box-shadow: 0 0 0px 1000px rgba(255, 255, 255, 0.1) inset;
+  -webkit-box-shadow: 0 0 0px 1000px #364156 inset;
   transition: background-color 5000s ease-in-out 0s;
 }
 
 .btn-submit {
   width: 100%;
   padding: 14px;
-  background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%);
+  background: #d66853;
   color: white;
   border: none;
   border-radius: 12px;
@@ -90,8 +89,8 @@ body {
 
 .btn-submit:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(108, 92, 231, 0.35);
-  background: linear-gradient(135deg, #5f4dd1 0%, #9189f0 100%);
+  box-shadow: 0 8px 20px rgba(214, 104, 83, 0.5);
+  background: #7d4e57;
 }
 
 .btn-submib0b0b0 {
@@ -99,27 +98,19 @@ body {
 }
 
 .auth-links a {
-  color: #a29bfe;
+  color: #d66853;
   text-decoration: none;
   font-weight: 600;
   transition: all 0.2s ease;
 }
 
 .auth-links a:hover {
-  color: #ffffff;
-  color: #6c5ce7;
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.2s ease;
-}
-
-.auth-links a:hover {
-  color: #5f4dd1;
+  color: #7d4e57;
   text-decoration: underline;
 }
 
 .error-message {
-  background: linear-gradient(135deg, #d63031 0%, #e17055 100%);
+  background: #d66853;
   color: white;
   padding: 14px 18px;
   border-radius: 12px;
@@ -127,7 +118,7 @@ body {
   text-align: center;
   display: none;
   font-weight: 500;
-  box-shadow: 0 4px 12px rgba(214, 48, 49, 0.5);
+  box-shadow: 0 4px 12px rgba(214, 104, 83, 0.5);
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
@@ -137,7 +128,7 @@ body {
 }
 
 .success-message {
-  background: linear-gradient(135deg, #00b894 0%, #55efc4 100%);
+  background: #7d4e57;
   color: white;
   padding: 14px 18px;
   border-radius: 12px;
@@ -146,7 +137,7 @@ body {
   display: none;
   font-weight: 500;
   border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 4px 12px rgba(0, 184, 148, 0.3);
+  box-shadow: 0 4px 12px rgba(125, 78, 87, 0.5);
 }
 
 .success-message.show {

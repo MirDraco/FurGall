@@ -18,16 +18,15 @@ a {
   width: fit-content;
   height: fit-content;
 }
-
 /* 헤더 세팅 */
 header {
-  background-color: rgba(0, 0, 0, 0.8);
-  backdrop-filter: blur(10px);
+  background-color: #212d40;
   color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 8px 45px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 /* 로고 컨테이너: 내부 로고들을 가로로 나란히 배치 */
@@ -66,19 +65,21 @@ nav {
 #login-button,
 .upload-button,
 .auth-button {
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  border: 2px solid #7d4e57;
   padding: 5px 15px;
   border-radius: 20px;
   font-size: 18px; /* 다른 메뉴보다 조금 작게 설정 */
   transition: all 0.3s ease;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: #364156;
+  color: white;
 }
 
 #login-button:hover,
 .upload-button:hover,
 .auth-button:hover {
-  background-color: white;
-  color: #1d1d1d; /* 배경이 흰색이 되면 글자는 어둡게 */
+  background-color: #d66853;
+  color: white;
+  border-color: #d66853;
 }
 
 /* 사용자 환영 메시지 스타일 */
@@ -97,7 +98,6 @@ nav {
   width: 100%;
   text-align: center;
   background-color: rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(10px);
   z-index: 1000;
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
